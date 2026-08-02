@@ -240,6 +240,14 @@ a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
 .pnTopo h1{font-size:19px;font-weight:800;letter-spacing:-.4px}
 .pnTopo p{font-size:12.5px;color:#6f777d}
 .volta{background:var(--pre2);border:1px solid var(--bd);color:#fff;font-size:13.5px;font-weight:600;padding:9px 15px;border-radius:9px}
+.pnAcoes{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.usr{display:flex;align-items:center;gap:9px;padding-right:13px;margin-right:4px;border-right:1px solid var(--bd)}
+.usr .av{width:33px;height:33px;border-radius:50%;background:var(--lm);color:var(--lmD);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
+.usr b{display:block;font-size:13.5px;color:#fff;line-height:1.25}
+.usr span{font-size:11.5px;color:#6f777d}
+.sair{background:transparent;border:1px solid #5c2626;color:#e79999;font-size:13.5px;font-weight:700;padding:9px 15px;border-radius:9px;display:flex;align-items:center;gap:7px}
+.sair:hover{background:#2a1414;border-color:#7a3232;color:#f5b5b5}
+@media(max-width:620px){.usr{display:none}}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:12px;margin-bottom:26px}
 .kp{background:var(--bg);border:1px solid var(--ln);border-radius:12px;padding:17px}
 .kp b{display:block;font-size:27px;font-weight:800;letter-spacing:-1px;line-height:1.1}
@@ -524,7 +532,11 @@ footer a:hover{color:var(--lm)}
 <div id="vPainel" class="oculto">
   <div class="pnTopo"><div class="w">
     <div><h1>Painel da loja</h1><p>Zitrone Car Care · demonstração do que a Léia vê no dia a dia</p></div>
-    <button class="volta" onclick="ir('loja')">← Voltar para a loja</button>
+    <div class="pnAcoes">
+      <div class="usr"><div class="av">L</div><div><b>Léia</b><span>administradora</span></div></div>
+      <button class="volta" onclick="ir('loja')">← Ver a loja</button>
+      <button class="sair" onclick="sair()">⏻ Sair</button>
+    </div>
   </div></div>
   <div class="w" style="padding-top:26px;padding-bottom:60px">
     <div class="sync"><span class="dot"></span><div><b>Bling conectado.</b> Última sincronização há 4 minutos · 810 produtos · 24 marcas · próxima em 26 minutos</div></div>
@@ -823,6 +835,7 @@ function ir(v){['vLoja','vPainel','vPolitica','vLogin'].forEach(i=>document.getE
  document.getElementById(alvo).classList.remove('oculto');
  document.getElementById('faixaProto').style.display=(v==='login')?'none':'';
  window.scrollTo(0,0);}
+function sair(){LOGADO=false;ir('login');}
 function entrar(){
  const u=(document.getElementById('lgU').value||'').trim().toLowerCase();
  const p=(document.getElementById('lgS').value||'').trim().toLowerCase();
