@@ -48,9 +48,15 @@ a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
 .bP .bo.on{display:flex}
 @media(max-width:920px){.fn{display:none}}
 @media(max-width:660px){.bZ{display:none}.lg .n{font-size:18px}}
-.mkBar{overflow-x:auto;white-space:nowrap;scrollbar-width:none;border-top:1px solid var(--bd);background:var(--pre)}
-.mkBar::-webkit-scrollbar{display:none}
-.mkBar .w{display:flex;gap:7px;padding-top:10px;padding-bottom:10px}
+.mkBar{border-top:1px solid var(--bd);background:var(--pre)}
+.mkBar .w{display:flex;align-items:center;gap:10px;padding-top:10px;padding-bottom:10px}
+.mkRol{flex:1;min-width:0;display:flex;gap:7px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch;position:relative}
+.mkRol::-webkit-scrollbar{display:none}
+.mkFix{flex-shrink:0;display:flex;align-items:center;gap:7px;padding-left:12px;border-left:1px solid var(--bd)}
+.btTodas{background:var(--lm);color:var(--lmD);border:none;border-radius:22px;font-size:13px;font-weight:800;padding:8px 15px;white-space:nowrap;display:flex;align-items:center;gap:6px}
+.btTodas:hover{background:var(--lm2)}
+.btTodas span{font-size:11px;opacity:.7}
+@media(max-width:560px){.btTodas{padding:8px 12px;font-size:12.5px}.btTodas span{display:none}}
 .ch{font-size:13px;color:#a8b0b4;padding:7px 14px;border-radius:22px;border:1px solid var(--bd);flex-shrink:0;transition:.15s;background:transparent}
 .ch i{font-style:normal;color:#6f777d;font-size:11.5px;margin-left:4px}
 .ch:hover{border-color:var(--lmE);color:#fff}
@@ -318,7 +324,10 @@ footer a:hover{color:var(--lm)}
       <button class="bP" onclick="abrir()">Pedido<span class="bo" id="bolha">0</span></button>
     </div>
   </div>
-  <nav class="mkBar"><div class="w" id="chips"></div></nav>
+  <nav class="mkBar"><div class="w">
+    <div class="mkRol" id="chips"></div>
+    <div class="mkFix"><button class="btTodas" onclick="toggleMarcas()">Todas as marcas <span id="qtMk">69</span> ▾</button></div>
+  </div></nav>
   <div class="mkAll" id="mkAll"><div class="w">
     <h4>TODAS AS MARCAS</h4>
     <input class="mkBusca" id="mkBusca" placeholder="Filtrar marca..." oninput="pintaMarcas()">
@@ -562,8 +571,9 @@ document.getElementById('dicas').innerHTML=DICAS.map(d=>
 function pintaChips(){
  document.getElementById('chips').innerHTML=
   `<div class="ch${FM==='Todas'?' on':''}" onclick="setM(null,'Todas')">Todas<i>${CAT.length}</i></div>`+
-  MARCAS.slice(0,14).map(m=>`<div class="ch${FM===m[0]?' on':''}" onclick="setM(null,'${m[0].replace(/'/g,"\\'")}')">${m[0]}<i>${m[1]}</i></div>`).join('')+
-  `<div class="ch chMais" onclick="toggleMarcas()">+ ver todas as ${MARCAS.length} marcas</div>`;}
+  MARCAS.slice(0,12).map(m=>`<div class="ch${FM===m[0]?' on':''}" onclick="setM(null,'${m[0].replace(/'/g,"\\'")}')">${m[0]}<i>${m[1]}</i></div>`).join('')+
+  '';
+ const q=document.getElementById('qtMk'); if(q) q.textContent=MARCAS.length;}
 function pintaMarcas(){
  const q=(document.getElementById('mkBusca').value||'').toLowerCase();
  document.getElementById('mkGr').innerHTML=MARCAS.filter(m=>!q||m[0].toLowerCase().includes(q))
