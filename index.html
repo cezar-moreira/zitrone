@@ -302,6 +302,58 @@ footer a:hover{color:var(--lm)}
 .mkIt.on i{color:#5d6f0e}
 .mkBusca{width:100%;max-width:320px;margin-bottom:14px;padding:9px 13px;border:1px solid var(--bd);border-radius:9px;background:var(--pre);color:#fff;font-size:13.5px;outline:none}
 .mkBusca::placeholder{color:#6f777d}
+
+/* ---------- login ---------- */
+.lgW{min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr;background:var(--pre)}
+@media(max-width:900px){.lgW{grid-template-columns:1fr}.lgArte{display:none}}
+.lgArte{position:relative;overflow:hidden;background:
+ radial-gradient(760px 420px at 30% 22%,rgba(196,229,56,.16),transparent 62%),
+ radial-gradient(560px 380px at 78% 84%,rgba(57,216,31,.10),transparent 60%),#0a0b0c;
+ display:flex;flex-direction:column;justify-content:space-between;padding:44px}
+.lgArte::before{content:"";position:absolute;inset:0;
+ background-image:linear-gradient(rgba(196,229,56,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(196,229,56,.035) 1px,transparent 1px);
+ background-size:54px 54px}
+.lgArte>*{position:relative;z-index:2}
+.lgFr{font-size:31px;font-weight:800;letter-spacing:-1.1px;line-height:1.16;color:#fff;max-width:420px}
+.lgFr em{font-style:normal;color:var(--lm)}
+.lgSub{color:#8b939b;font-size:14.5px;margin-top:12px;max-width:380px}
+.lgSvg{align-self:center;width:100%;max-width:400px}
+.lgNums{display:flex;gap:26px;flex-wrap:wrap}
+.lgNums div b{display:block;font-size:21px;font-weight:800;color:var(--lm);letter-spacing:-.6px}
+.lgNums div span{font-size:11.5px;color:#6f777d}
+.lgForm{display:flex;align-items:center;justify-content:center;padding:40px 34px;background:var(--pre)}
+.lgBox{width:100%;max-width:352px}
+.lgBox .lg{margin-bottom:30px}
+.lgBox h1{font-size:25px;font-weight:800;letter-spacing:-.8px;color:#fff;margin-bottom:6px}
+.lgBox .p{color:#8b939b;font-size:14.5px;margin-bottom:26px}
+.cp{margin-bottom:15px}
+.cp label{display:block;font-size:12.5px;font-weight:700;color:#a8b0b4;margin-bottom:6px}
+.cp input{width:100%;padding:13px 15px;border:1px solid var(--bd);border-radius:11px;background:var(--pre2);color:#fff;font-size:15px;outline:none}
+.cp input:focus{border-color:var(--lm);background:var(--pre3)}
+.lgBt{width:100%;background:var(--lm);color:var(--lmD);border:none;border-radius:12px;padding:14px;font-size:15.5px;font-weight:800;margin-top:8px}
+.lgBt:hover{background:var(--lm2)}
+.lgDica{margin-top:18px;background:var(--pre2);border:1px dashed var(--bd2);border-radius:11px;padding:13px 15px;font-size:12.5px;color:#8b939b;line-height:1.6}
+.lgDica b{color:var(--lm)}
+.lgErr{background:#2a1414;border:1px solid #5c2626;color:#f0a0a0;border-radius:10px;padding:10px 13px;font-size:13px;margin-bottom:14px;display:none}
+.lgErr.on{display:block}
+.lgVolta{margin-top:22px;text-align:center;font-size:13.5px}
+.lgVolta a{color:#8b939b;text-decoration:underline}
+
+/* ---------- gráficos ---------- */
+.gf{display:grid;grid-template-columns:1.4fr 1fr;gap:13px;margin-bottom:26px}
+@media(max-width:900px){.gf{grid-template-columns:1fr}}
+.cx{background:var(--bg);border:1px solid var(--ln);border-radius:13px;padding:19px}
+.cx h3{font-size:15.5px;font-weight:700;margin-bottom:3px}
+.cx .sb{font-size:12.5px;color:var(--tx2);margin-bottom:16px}
+.lgd{display:flex;gap:14px;flex-wrap:wrap;margin-top:13px;font-size:12.5px;color:var(--tx2)}
+.lgd i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.bh{margin-bottom:11px}
+.bh .tp{display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px}
+.bh .tp b{font-weight:600}
+.bh .tp span{color:var(--tx2);font-weight:700}
+.bh .tr{height:9px;background:var(--bg2);border-radius:6px;overflow:hidden}
+.bh .tr i{display:block;height:100%;border-radius:6px;background:var(--lmE)}
+.bh:nth-child(2) .tr i{background:#1c2208}
 </style>
 </head>
 <body>
@@ -431,6 +483,57 @@ footer a:hover{color:var(--lm)}
 </footer>
 </div>
 
+
+<!-- ============ LOGIN ============ -->
+<div id="vLogin" class="oculto">
+ <div class="lgW">
+  <div class="lgArte">
+   <div>
+    <div class="lgFr">O painel de quem <em>vende de verdade</em> em Fortaleza.</div>
+    <div class="lgSub">Pedidos do site caindo direto no Bling, estoque sempre certo e o catálogo inteiro na mão.</div>
+   </div>
+   <svg class="lgSvg" viewBox="0 0 400 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+     <ellipse cx="200" cy="188" rx="150" ry="9" fill="#c4e538" opacity=".08"/>
+     <path d="M52 152h296" stroke="#2a2f22" stroke-width="2" stroke-linecap="round"/>
+     <path d="M62 152c0-14 5-24 14-27l30-9 26-24c7-6 16-10 25-10h70c10 0 20 4 27 11l24 23 32 9c9 3 14 13 14 27" stroke="#c4e538" stroke-width="2.4" stroke-linejoin="round"/>
+     <path d="M118 92l22-20c5-4 11-7 18-7h50c7 0 14 3 19 8l20 19H118z" fill="#c4e538" opacity=".13"/>
+     <path d="M118 92l22-20c5-4 11-7 18-7h50c7 0 14 3 19 8l20 19" stroke="#c4e538" stroke-width="2" stroke-linejoin="round" opacity=".65"/>
+     <path d="M186 65v27" stroke="#c4e538" stroke-width="1.6" opacity=".45"/>
+     <circle cx="112" cy="152" r="21" stroke="#c4e538" stroke-width="2.4"/>
+     <circle cx="112" cy="152" r="8" fill="#c4e538" opacity=".3"/>
+     <circle cx="288" cy="152" r="21" stroke="#c4e538" stroke-width="2.4"/>
+     <circle cx="288" cy="152" r="8" fill="#c4e538" opacity=".3"/>
+     <path d="M300 108c14-4 26-2 34 6" stroke="#39d81f" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+     <path d="M306 122c12-3 22-1 29 5" stroke="#39d81f" stroke-width="2" stroke-linecap="round" opacity=".35"/>
+     <g opacity=".75">
+       <path d="M78 44c0 5-4 8-8 8s-8-3-8-8 8-15 8-15 8 10 8 15z" fill="#c4e538" opacity=".55"/>
+       <path d="M330 62c0 4-3 7-7 7s-7-3-7-7 7-13 7-13 7 9 7 13z" fill="#c4e538" opacity=".35"/>
+       <path d="M40 96c0 3-3 6-6 6s-6-3-6-6 6-11 6-11 6 8 6 11z" fill="#c4e538" opacity=".25"/>
+     </g>
+   </svg>
+   <div class="lgNums">
+     <div><b>810</b><span>produtos publicados</span></div>
+     <div><b>39,4 mil</b><span>seguidores</span></div>
+     <div><b>2 lojas</b><span>Aldeota e Maraponga</span></div>
+   </div>
+  </div>
+  <div class="lgForm"><div class="lgBox">
+    <div class="lg"><div class="car"></div><div class="n" style="font-size:21px;color:#fff">ZITRONE</div><div class="s">CAR CARE</div></div>
+    <h1>Entrar no painel</h1>
+    <div class="p">Acesso restrito à equipe da loja.</div>
+    <div class="lgErr" id="lgErr">Usuário ou senha incorretos. Confira os dados de demonstração abaixo.</div>
+    <div class="cp"><label>Usuário</label><input id="lgU" type="text" placeholder="seu usuário" autocomplete="off"></div>
+    <div class="cp"><label>Senha</label><input id="lgS" type="password" placeholder="sua senha" autocomplete="off" onkeydown="if(event.key==='Enter')entrar()"></div>
+    <button class="lgBt" onclick="entrar()">Entrar</button>
+    <div class="lgDica">
+      <b>Tela de demonstração.</b> Nenhuma senha é guardada ou enviada.<br>
+      Para entrar, use <b>zitrone</b> e <b>demo</b>.
+    </div>
+    <div class="lgVolta"><a href="#" onclick="ir('loja');return false">← Voltar para a loja</a></div>
+  </div></div>
+ </div>
+</div>
+
 <!-- ============ PAINEL ============ -->
 <div id="vPainel" class="oculto">
   <div class="pnTopo"><div class="w">
@@ -440,6 +543,58 @@ footer a:hover{color:var(--lm)}
   <div class="w" style="padding-top:26px;padding-bottom:60px">
     <div class="sync"><span class="dot"></span><div><b>Bling conectado.</b> Última sincronização há 4 minutos · 810 produtos · 24 marcas · próxima em 26 minutos</div></div>
     <div class="kpis" id="kpis"></div>
+
+    <div class="gf">
+      <div class="cx">
+        <h3>Vendas dos últimos 7 dias</h3><div class="sb">Site e balcão somados · valores em reais</div>
+        <svg viewBox="0 0 620 220" style="width:100%;height:auto">
+          <line x1="44" y1="10" x2="44" y2="176" stroke="#e4e7de"/>
+          <line x1="44" y1="176" x2="606" y2="176" stroke="#e4e7de"/>
+          <g font-size="10" fill="#9aa1a8" text-anchor="end">
+            <text x="38" y="14">16k</text><text x="38" y="55">12k</text><text x="38" y="96">8k</text><text x="38" y="137">4k</text><text x="38" y="178">0</text>
+          </g>
+          <g stroke="#f0f2ec"><line x1="44" y1="51" x2="606" y2="51"/><line x1="44" y1="92" x2="606" y2="92"/><line x1="44" y1="133" x2="606" y2="133"/></g>
+          <g>
+            <rect x="66" y="102" width="46" height="74" rx="4" fill="#1c2208"/><rect x="118" y="96" width="46" height="80" rx="4" fill="#c4e538"/>
+            <rect x="146" y="88" width="46" height="88" rx="4" fill="#1c2208"/><rect x="198" y="74" width="46" height="102" rx="4" fill="#c4e538"/>
+            <rect x="226" y="112" width="46" height="64" rx="4" fill="#1c2208"/><rect x="278" y="100" width="46" height="76" rx="4" fill="#c4e538"/>
+            <rect x="306" y="66" width="46" height="110" rx="4" fill="#1c2208"/><rect x="358" y="48" width="46" height="128" rx="4" fill="#c4e538"/>
+            <rect x="386" y="80" width="46" height="96" rx="4" fill="#1c2208"/><rect x="438" y="60" width="46" height="116" rx="4" fill="#c4e538"/>
+            <rect x="466" y="120" width="46" height="56" rx="4" fill="#1c2208"/><rect x="518" y="108" width="46" height="68" rx="4" fill="#c4e538"/>
+          </g>
+          <g font-size="11" fill="#5c6268" text-anchor="middle">
+            <text x="89" y="194">seg</text><text x="169" y="194">ter</text><text x="249" y="194">qua</text>
+            <text x="329" y="194">qui</text><text x="409" y="194">sex</text><text x="489" y="194">sáb</text><text x="541" y="194">dom</text>
+          </g>
+        </svg>
+        <div class="lgd"><span><i style="background:#1c2208"></i>Balcão e WhatsApp</span><span><i style="background:#c4e538"></i>Pedidos do site</span></div>
+      </div>
+      <div class="cx">
+        <h3>Faturamento por categoria</h3><div class="sb">Participação no mês</div>
+        <svg viewBox="0 0 200 200" style="width:100%;max-width:190px;height:auto;display:block;margin:6px auto 0">
+          <circle cx="100" cy="100" r="72" fill="none" stroke="#f0f2ec" stroke-width="30"/>
+          <circle cx="100" cy="100" r="72" fill="none" stroke="#c4e538" stroke-width="30" stroke-dasharray="122 330" transform="rotate(-90 100 100)"/>
+          <circle cx="100" cy="100" r="72" fill="none" stroke="#7d8f10" stroke-width="30" stroke-dasharray="120 332" stroke-dashoffset="-122" transform="rotate(-90 100 100)"/>
+          <circle cx="100" cy="100" r="72" fill="none" stroke="#39d81f" stroke-width="30" stroke-dasharray="68 384" stroke-dashoffset="-242" transform="rotate(-90 100 100)"/>
+          <circle cx="100" cy="100" r="72" fill="none" stroke="#1c2208" stroke-width="30" stroke-dasharray="42 410" stroke-dashoffset="-310" transform="rotate(-90 100 100)"/>
+          <text x="100" y="96" text-anchor="middle" font-size="23" font-weight="800" fill="#14171a">810</text>
+          <text x="100" y="114" text-anchor="middle" font-size="10" fill="#9aa1a8">produtos</text>
+        </svg>
+        <div class="lgd" style="justify-content:center">
+          <span><i style="background:#c4e538"></i>Acessórios</span><span><i style="background:#7d8f10"></i>Lavagem</span>
+          <span><i style="background:#39d81f"></i>Polimento</span><span><i style="background:#1c2208"></i>Equipamento</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cx" style="margin-bottom:26px">
+      <h3>Os cinco produtos que mais saem</h3><div class="sb">Quantidades reais do último mês, direto do Bling</div>
+      <div class="bh"><div class="tp"><b>Piso Modular Automotivo Aberto — Cinza</b><span>502 un</span></div><div class="tr"><i style="width:100%"></i></div></div>
+      <div class="bh"><div class="tp"><b>Piso Modular Automotivo Aberto — Preto</b><span>134 un</span></div><div class="tr"><i style="width:27%"></i></div></div>
+      <div class="bh"><div class="tp"><b>Toalha de Microfibra Dual Loop Amarela 80x40</b><span>129 un</span></div><div class="tr"><i style="width:26%"></i></div></div>
+      <div class="bh"><div class="tp"><b>Flanela de Microfibra Amarela 40x60 260gsm</b><span>116 un</span></div><div class="tr"><i style="width:23%"></i></div></div>
+      <div class="bh" style="margin-bottom:0"><div class="tp"><b>Sport Lux Gold Man — Folha Aromatizante</b><span>102 un</span></div><div class="tr"><i style="width:20%"></i></div></div>
+    </div>
 
     <div class="cb" style="margin-top:8px"><div><h2 style="font-size:20px">Pedidos de hoje</h2><p>Chegam do site e vão direto para o Bling.</p></div></div>
     <table class="tb" style="margin-bottom:28px">
@@ -675,9 +830,19 @@ function gerar(){const ks=Object.keys(car);if(!ks.length){alert('Adicione produt
 const KPIS=[['810','produtos publicados',''],['4','pedidos hoje',''],['R$ 4.846,10','vendido hoje',''],['785','itens sem foto ou marca','al']];
 document.getElementById('kpis').innerHTML=KPIS.map(k=>`<div class="kp ${k[2]}"><b>${k[0]}</b><span>${k[1]}</span></div>`).join('');
 
-function ir(v){['vLoja','vPainel','vPolitica'].forEach(i=>document.getElementById(i).classList.add('oculto'));
- document.getElementById(v==='painel'?'vPainel':v==='politica'?'vPolitica':'vLoja').classList.remove('oculto');
+let LOGADO=false;
+function ir(v){['vLoja','vPainel','vPolitica','vLogin'].forEach(i=>document.getElementById(i).classList.add('oculto'));
+ if(v==='painel'&&!LOGADO)v='login';
+ const alvo={painel:'vPainel',politica:'vPolitica',login:'vLogin'}[v]||'vLoja';
+ document.getElementById(alvo).classList.remove('oculto');
+ document.getElementById('faixaProto').style.display=(v==='login')?'none':'';
  window.scrollTo(0,0);}
+function entrar(){
+ const u=(document.getElementById('lgU').value||'').trim().toLowerCase();
+ const p=(document.getElementById('lgS').value||'').trim().toLowerCase();
+ if(u==='zitrone'&&p==='demo'){LOGADO=true;document.getElementById('lgErr').classList.remove('on');
+  document.getElementById('lgU').value='';document.getElementById('lgS').value='';ir('painel');}
+ else document.getElementById('lgErr').classList.add('on');}
 function ck(a){document.getElementById('ck').classList.remove('on');}
 setTimeout(()=>document.getElementById('ck').classList.add('on'),1400);
 pintar();
