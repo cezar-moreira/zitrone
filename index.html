@@ -305,22 +305,25 @@ footer a:hover{color:var(--lm)}
 
 /* ---------- login ---------- */
 .lgW{min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr;background:var(--pre)}
-@media(max-width:900px){.lgW{grid-template-columns:1fr}.lgArte{display:none}}
-.lgArte{position:relative;overflow:hidden;background:
- radial-gradient(760px 420px at 30% 22%,rgba(196,229,56,.16),transparent 62%),
- radial-gradient(560px 380px at 78% 84%,rgba(57,216,31,.10),transparent 60%),#0a0b0c;
+@media(max-width:900px){.lgW{grid-template-columns:1fr;min-height:auto}
+ .lgArte{min-height:280px;padding:26px}.lgSvg{display:none}.lgFr{font-size:24px}.lgSub{display:none}}
+.lgArte{position:relative;overflow:hidden;background:#0a0b0c;
  display:flex;flex-direction:column;justify-content:space-between;padding:44px}
-.lgArte::before{content:"";position:absolute;inset:0;
- background-image:linear-gradient(rgba(196,229,56,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(196,229,56,.035) 1px,transparent 1px);
+.lgArte .foto{position:absolute;inset:0;background:url('login-carro.jpg') center/cover no-repeat;z-index:0}
+.lgArte .veu{position:absolute;inset:0;z-index:1;background:
+ linear-gradient(180deg,rgba(10,11,12,.86) 0%,rgba(10,11,12,.42) 34%,rgba(10,11,12,.55) 62%,rgba(10,11,12,.94) 100%),
+ radial-gradient(680px 420px at 22% 18%,rgba(196,229,56,.16),transparent 64%)}
+.lgArte::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+ background-image:linear-gradient(rgba(196,229,56,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(196,229,56,.05) 1px,transparent 1px);
  background-size:54px 54px}
-.lgArte>*{position:relative;z-index:2}
-.lgFr{font-size:31px;font-weight:800;letter-spacing:-1.1px;line-height:1.16;color:#fff;max-width:420px}
+.lgArte>*{position:relative;z-index:3}
+.lgFr{text-shadow:0 2px 22px rgba(0,0,0,.85);font-size:31px;font-weight:800;letter-spacing:-1.1px;line-height:1.16;color:#fff;max-width:420px}
 .lgFr em{font-style:normal;color:var(--lm)}
-.lgSub{color:#8b939b;font-size:14.5px;margin-top:12px;max-width:380px}
+.lgSub{text-shadow:0 1px 14px rgba(0,0,0,.9);color:#c2c8cd;font-size:14.5px;margin-top:12px;max-width:380px}
 .lgSvg{align-self:center;width:100%;max-width:400px}
-.lgNums{display:flex;gap:26px;flex-wrap:wrap}
+.lgNums{display:flex;gap:26px;flex-wrap:wrap;text-shadow:0 2px 16px rgba(0,0,0,.9)}
 .lgNums div b{display:block;font-size:21px;font-weight:800;color:var(--lm);letter-spacing:-.6px}
-.lgNums div span{font-size:11.5px;color:#6f777d}
+.lgNums div span{font-size:11.5px;color:#98a0a6;text-shadow:0 1px 10px rgba(0,0,0,.9)}
 .lgForm{display:flex;align-items:center;justify-content:center;padding:40px 34px;background:var(--pre)}
 .lgBox{width:100%;max-width:352px}
 .lgBox .lg{margin-bottom:30px}
@@ -488,29 +491,12 @@ footer a:hover{color:var(--lm)}
 <div id="vLogin" class="oculto">
  <div class="lgW">
   <div class="lgArte">
+   <div class="foto"></div><div class="veu"></div>
    <div>
     <div class="lgFr">O painel de quem <em>vende de verdade</em> em Fortaleza.</div>
     <div class="lgSub">Pedidos do site caindo direto no Bling, estoque sempre certo e o catálogo inteiro na mão.</div>
    </div>
-   <svg class="lgSvg" viewBox="0 0 400 210" fill="none" xmlns="http://www.w3.org/2000/svg">
-     <ellipse cx="200" cy="188" rx="150" ry="9" fill="#c4e538" opacity=".08"/>
-     <path d="M52 152h296" stroke="#2a2f22" stroke-width="2" stroke-linecap="round"/>
-     <path d="M62 152c0-14 5-24 14-27l30-9 26-24c7-6 16-10 25-10h70c10 0 20 4 27 11l24 23 32 9c9 3 14 13 14 27" stroke="#c4e538" stroke-width="2.4" stroke-linejoin="round"/>
-     <path d="M118 92l22-20c5-4 11-7 18-7h50c7 0 14 3 19 8l20 19H118z" fill="#c4e538" opacity=".13"/>
-     <path d="M118 92l22-20c5-4 11-7 18-7h50c7 0 14 3 19 8l20 19" stroke="#c4e538" stroke-width="2" stroke-linejoin="round" opacity=".65"/>
-     <path d="M186 65v27" stroke="#c4e538" stroke-width="1.6" opacity=".45"/>
-     <circle cx="112" cy="152" r="21" stroke="#c4e538" stroke-width="2.4"/>
-     <circle cx="112" cy="152" r="8" fill="#c4e538" opacity=".3"/>
-     <circle cx="288" cy="152" r="21" stroke="#c4e538" stroke-width="2.4"/>
-     <circle cx="288" cy="152" r="8" fill="#c4e538" opacity=".3"/>
-     <path d="M300 108c14-4 26-2 34 6" stroke="#39d81f" stroke-width="2" stroke-linecap="round" opacity=".55"/>
-     <path d="M306 122c12-3 22-1 29 5" stroke="#39d81f" stroke-width="2" stroke-linecap="round" opacity=".35"/>
-     <g opacity=".75">
-       <path d="M78 44c0 5-4 8-8 8s-8-3-8-8 8-15 8-15 8 10 8 15z" fill="#c4e538" opacity=".55"/>
-       <path d="M330 62c0 4-3 7-7 7s-7-3-7-7 7-13 7-13 7 9 7 13z" fill="#c4e538" opacity=".35"/>
-       <path d="M40 96c0 3-3 6-6 6s-6-3-6-6 6-11 6-11 6 8 6 11z" fill="#c4e538" opacity=".25"/>
-     </g>
-   </svg>
+   
    <div class="lgNums">
      <div><b>810</b><span>produtos publicados</span></div>
      <div><b>39,4 mil</b><span>seguidores</span></div>
