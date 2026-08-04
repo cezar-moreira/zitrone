@@ -107,6 +107,7 @@ a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
 .etI h3{font-size:16px;font-weight:700;margin-bottom:4px;position:relative}
 .etI p{font-size:13px;color:var(--tx2);line-height:1.5;position:relative}
 
+.frTit{font-size:12px;font-weight:800;letter-spacing:1.6px;color:var(--tx3);text-transform:uppercase;margin-bottom:9px}
 .fr{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:18px}
 .ch2{font-size:12.5px;color:var(--tx2);padding:6px 13px;border-radius:8px;border:1px solid var(--ln);background:var(--bg2);transition:.15s}
 .ch2 i{font-style:normal;color:var(--tx3);font-size:11px;margin-left:5px}
@@ -389,7 +390,7 @@ footer a:hover{color:var(--lm)}
   </div>
   <nav class="mkBar"><div class="w">
     <div class="mkRol" id="chips"></div>
-    <div class="mkFix"><button class="btTodas" onclick="toggleMarcas()">Todas as marcas <span id="qtMk">69</span> ▾</button></div>
+    <div class="mkFix"><button class="btTodas" onclick="toggleMarcas()">Ver todas as marcas ▾</button></div>
   </div></nav>
   <div class="mkAll" id="mkAll"><div class="w">
     <h4>TODAS AS MARCAS</h4>
@@ -409,9 +410,8 @@ footer a:hover{color:var(--lm)}
     </div>
     <div class="pv">
       <div><b>39,4 mil</b><span>seguidores no Instagram</span></div>
-      <div><b id="pvQtd">810</b><span>produtos disponíveis</span></div>
-      <div><b id="pvMk">24</b><span>marcas de verdade</span></div>
-      <div><b>2 lojas</b><span>Aldeota e Maraponga</span></div>
+      <div><b>Aldeota</b><span>e Maraponga</span></div>
+      <div><b>Entrega hoje</b><span>em Fortaleza</span></div>
     </div>
   </div>
 </section>
@@ -440,6 +440,7 @@ footer a:hover{color:var(--lm)}
 <section class="sec" id="cat">
   <div class="w">
     <div class="cb"><div><h2>Catálogo</h2><p id="conta">Preço e disponibilidade direto do sistema da loja.</p></div></div>
+    <div class="frTit">Por categoria</div>
     <div class="fr" id="grupos"></div>
     <div class="gr" id="grade"></div>
     <button class="mais" id="mais" onclick="mais()">Mostrar mais produtos</button>
@@ -508,7 +509,7 @@ footer a:hover{color:var(--lm)}
    <div class="lgNums">
      <div><b>810</b><span>produtos publicados</span></div>
      <div><b>39,4 mil</b><span>seguidores</span></div>
-     <div><b>2 lojas</b><span>Aldeota e Maraponga</span></div>
+     <div><b>Entrega hoje</b><span>em Fortaleza</span></div>
    </div>
   </div>
   <div class="lgForm"><div class="lgBox">
@@ -712,8 +713,6 @@ const KITS=[['ETAPA COMPLETA','Kit Lavagem Profissional','Tudo para a lavagem de
 const DICAS=[['DICAS','5 marcas e suas boinas: qual usar em cada corte'],['COMPARATIVO','5 shampoos desengraxantes testados lado a lado'],
 ['PRODUTO','Pulverizador 360° da Kers: vale a pena?'],['ACESSÓRIO','Conector de mangueira com engate rápido']];
 
-document.getElementById('pvQtd').textContent=CAT.length;
-document.getElementById('pvMk').textContent=MARCAS.length;
 document.getElementById('etapas').innerHTML=ETAPAS.map((e,i)=>
  `<div class="etI" onclick="porGrupo('${e[2]}')"><div class="n">0${i+1}</div><h3>${e[0]}</h3><p>${e[1]}</p></div>`).join('');
 document.getElementById('kits').innerHTML=KITS.map(k=>
@@ -723,20 +722,20 @@ document.getElementById('dicas').innerHTML=DICAS.map(d=>
  `<div class="dcI"><div class="tl"><div class="tg">${d[0]}</div><div class="pl">▶</div><h3>${d[1]}</h3></div></div>`).join('');
 function pintaChips(){
  document.getElementById('chips').innerHTML=
-  `<div class="ch${FM==='Todas'?' on':''}" onclick="setM(null,'Todas')">Todas<i>${CAT.length}</i></div>`+
-  MARCAS.slice(0,12).map(m=>`<div class="ch${FM===m[0]?' on':''}" onclick="setM(null,'${m[0].replace(/'/g,"\\'")}')">${m[0]}<i>${m[1]}</i></div>`).join('')+
+  `<div class="ch${FM==='Todas'?' on':''}" onclick="setM(null,'Todas')">Todas as marcas</div>`+
+  MARCAS.slice(0,13).map(m=>`<div class="ch${FM===m[0]?' on':''}" onclick="setM(null,'${m[0].replace(/'/g,"\\'")}')">${m[0]}</div>`).join('')+
   '';
- const q=document.getElementById('qtMk'); if(q) q.textContent=MARCAS.length;}
+ }
 function pintaMarcas(){
  const q=(document.getElementById('mkBusca').value||'').toLowerCase();
  document.getElementById('mkGr').innerHTML=MARCAS.filter(m=>!q||m[0].toLowerCase().includes(q))
-  .map(m=>`<div class="mkIt${FM===m[0]?' on':''}" onclick="setM(null,'${m[0].replace(/'/g,"\\'")}')"><span>${m[0]}</span><i>${m[1]}</i></div>`).join('')
+  .map(m=>`<div class="mkIt${FM===m[0]?' on':''}" onclick="setM(null,'${m[0].replace(/'/g,"\\'")}')"><span>${m[0]}</span></div>`).join('')
   || '<div style="color:#6f777d;font-size:13.5px;padding:6px">Nenhuma marca com esse nome.</div>';}
 function toggleMarcas(){const el=document.getElementById('mkAll');el.classList.toggle('on');
  if(el.classList.contains('on')){pintaMarcas();el.scrollIntoView({block:'nearest'});}}
 pintaChips();
-document.getElementById('grupos').innerHTML=`<div class="ch2 on" onclick="setG(this,'Todos')">Todos os grupos</div>`+
- GRUPOS.map(g=>`<div class="ch2" onclick="setG(this,'${g[0].replace(/'/g,"\\'")}')">${g[0]}<i>${g[1]}</i></div>`).join('')+
+document.getElementById('grupos').innerHTML=`<div class="ch2 on" onclick="setG(this,'Todos')">Todas as categorias</div>`+
+ GRUPOS.map(g=>`<div class="ch2" onclick="setG(this,'${g[0].replace(/'/g,"\\'")}')">${g[0]}</div>`).join('')+
  `<select class="ord" onchange="ORD=this.value;PAG=0;render()">
    <option value="giro">Mais vendidos</option><option value="menor">Menor preço</option>
    <option value="maior">Maior preço</option><option value="az">Nome A-Z</option></select>`;
