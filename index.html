@@ -363,6 +363,24 @@ footer a:hover{color:var(--lm)}
 .bh .tr{height:9px;background:var(--bg2);border-radius:6px;overflow:hidden}
 .bh .tr i{display:block;height:100%;border-radius:6px;background:var(--lmE)}
 .bh:nth-child(2) .tr i{background:#1c2208}
+
+.ig{background:linear-gradient(135deg,#0e1012 0%,#171a1d 55%,#0e1012 100%);position:relative;overflow:hidden;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+.ig::before{content:"";position:absolute;right:-120px;top:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(196,229,56,.14),transparent 66%)}
+.igIn{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center;padding:52px 0}
+@media(max-width:860px){.igIn{grid-template-columns:1fr;gap:28px;padding:40px 0}}
+.igTx .ar{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;letter-spacing:.4px;color:var(--lmD);background:var(--lm);padding:7px 14px;border-radius:22px;margin-bottom:18px}
+.igTx h2{font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1.15;color:#fff;margin-bottom:12px}
+.igTx h2 em{font-style:normal;color:var(--lm)}
+.igTx p{color:#a8b0b4;font-size:16.5px;margin-bottom:24px;max-width:470px}
+.igBt{display:inline-flex;align-items:center;gap:10px;background:var(--lm);color:var(--lmD);border:none;border-radius:12px;padding:15px 26px;font-size:15.5px;font-weight:800}
+.igBt:hover{background:var(--lm2)}
+.igSeg{margin-top:16px;font-size:13.5px;color:#6f777d}
+.igSeg b{color:#fff}
+.igGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(max-width:860px){.igGrid{max-width:420px}}
+.igCel{aspect-ratio:1/1;border-radius:11px;border:1px solid var(--bd);background:linear-gradient(160deg,#22262b,#101315);display:flex;align-items:center;justify-content:center;color:#4f5934;font-size:10.5px;font-weight:800;letter-spacing:1px;text-align:center;padding:8px;transition:.16s}
+.igCel:hover{border-color:var(--lmE);transform:scale(1.04)}
+.igCel.on{background:linear-gradient(160deg,rgba(196,229,56,.22),rgba(196,229,56,.06));color:var(--lm);border-color:rgba(196,229,56,.4)}
 </style>
 </head>
 <body>
@@ -458,6 +476,27 @@ footer a:hover{color:var(--lm)}
   </div>
 </section>
 
+
+<section class="ig">
+  <div class="w igIn">
+    <div class="igTx">
+      <div class="ar">@zitronecarcare</div>
+      <h2>Toda semana tem <em>dica nova</em> por lá.</h2>
+      <p>Teste de produto, comparativo de marca, o passo a passo que a gente usa na loja. Segue a Zitrone no Instagram e vê antes de todo mundo.</p>
+      <a class="igBt" href="https://instagram.com/zitronecarcare" target="_blank" rel="noopener">Seguir no Instagram</a>
+      <div class="igSeg"><b>39,4 mil</b> pessoas já seguem · <b>711</b> publicações</div>
+    </div>
+    <div class="igGrid">
+      <div class="igCel on">DICAS ZITRONE</div>
+      <div class="igCel">5 MARCAS<br>E SUAS BOINAS</div>
+      <div class="igCel">TESTE DE<br>SHAMPOO</div>
+      <div class="igCel">PULVERIZADOR<br>360°</div>
+      <div class="igCel on">ANTES<br>E DEPOIS</div>
+      <div class="igCel">BASTIDORES<br>DA LOJA</div>
+    </div>
+  </div>
+</section>
+
 <section class="sec d">
   <div class="w b2bIn">
     <div class="b2bTx">
@@ -488,7 +527,7 @@ footer a:hover{color:var(--lm)}
         Segunda a sexta · 8h às 17h<br>Sábado · 9h às 13h<br>Domingo · fechado<br><br>
         <b style="color:#fff">(85) 9636-9804</b><br>
         <a href="#" onclick="zap('Olá! Vim pelo site.');return false">Falar no WhatsApp</a><br>
-        <a href="https://instagram.com/zitronecarcare">@zitronecarcare</a></div>
+        <a href="https://instagram.com/zitronecarcare" target="_blank" rel="noopener">Siga @zitronecarcare</a></div>
       <div><h4>Institucional</h4><a href="#" onclick="ir('politica');return false">Política de privacidade</a><br><a href="#">Trocas e devoluções</a><br><a href="#" onclick="loginB2B();return false">Área da oficina</a></div>
     </div>
     <div class="lgpd"><b>Seus dados estão protegidos.</b> Coletamos apenas o necessário para atender seu pedido. Você pode pedir acesso, correção ou exclusão dos seus dados a qualquer momento, conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018). Conexão segura em todas as páginas.</div>
