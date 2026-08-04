@@ -315,16 +315,13 @@ footer a:hover{color:var(--lm)}
 /* ---------- login ---------- */
 .lgW{min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr;background:var(--pre)}
 @media(max-width:900px){.lgW{grid-template-columns:1fr;min-height:auto}
- .lgArte{min-height:280px;padding:26px}.lgSvg{display:none}.lgFr{font-size:24px}.lgSub{display:none}}
-.lgArte{position:relative;overflow:hidden;background:#0a0b0c;
- display:flex;flex-direction:column;justify-content:space-between;padding:44px}
+ .lgArte{min-height:240px}}
+.lgArte{position:relative;overflow:hidden;background:#0a0b0c;padding:0}
 .lgArte .foto{position:absolute;inset:0;background:url('login-carro.jpg') center 42%/cover no-repeat;z-index:0}
 .lgArte .veu{position:absolute;inset:0;z-index:1;background:
- linear-gradient(180deg,rgba(6,7,8,.72) 0%,rgba(6,7,8,.10) 26%,rgba(6,7,8,0) 48%,rgba(6,7,8,.20) 70%,rgba(6,7,8,.85) 100%),
- radial-gradient(620px 380px at 20% 14%,rgba(196,229,56,.10),transparent 66%)}
-.lgArte::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
- background-image:linear-gradient(rgba(196,229,56,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(196,229,56,.022) 1px,transparent 1px);
- background-size:54px 54px}
+ linear-gradient(90deg,rgba(6,7,8,0) 78%,rgba(14,16,18,.85) 100%),
+ radial-gradient(700px 460px at 40% 46%,rgba(196,229,56,.07),transparent 70%)}
+
 .lgArte>*{position:relative;z-index:3}
 .lgFr{text-shadow:0 2px 22px rgba(0,0,0,.85);font-size:31px;font-weight:800;letter-spacing:-1.1px;line-height:1.16;color:#fff;max-width:420px}
 .lgFr em{font-style:normal;color:var(--lm)}
@@ -501,16 +498,6 @@ footer a:hover{color:var(--lm)}
  <div class="lgW">
   <div class="lgArte">
    <div class="foto"></div><div class="veu"></div>
-   <div>
-    <div class="lgFr">O painel de quem <em>vende de verdade</em> em Fortaleza.</div>
-    <div class="lgSub">Pedidos do site caindo direto no Bling, estoque sempre certo e o catálogo inteiro na mão.</div>
-   </div>
-   
-   <div class="lgNums">
-     <div><b>810</b><span>produtos publicados</span></div>
-     <div><b>39,4 mil</b><span>seguidores</span></div>
-     <div><b>Entrega hoje</b><span>em Fortaleza</span></div>
-   </div>
   </div>
   <div class="lgForm"><div class="lgBox">
     <div class="lg"><div class="car"></div><div class="n" style="font-size:21px;color:#fff">ZITRONE</div><div class="s">CAR CARE</div></div>
