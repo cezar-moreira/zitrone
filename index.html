@@ -527,12 +527,12 @@ footer a:hover{color:var(--lm)}
     </div>
   </div></div>
   <div class="w" style="padding-top:26px;padding-bottom:60px">
-    <div class="sync"><span class="dot"></span><div><b>Bling conectado.</b> Última sincronização há 4 minutos · 810 produtos · 24 marcas · próxima em 26 minutos</div></div>
+    <div class="sync"><span class="dot"></span><div><b>Bling conectado.</b> Última sincronização há 4 minutos · 810 produtos · 69 marcas · próxima em 26 minutos <em style="font-style:normal;color:var(--tx3)">— exemplo de como fica quando a integração estiver ligada</em></div></div>
     <div class="kpis" id="kpis"></div>
 
     <div class="gf">
       <div class="cx">
-        <h3>Vendas dos últimos 7 dias</h3><div class="sb">Site e balcão somados · valores em reais</div>
+        <h3>Vendas dos últimos 7 dias</h3><div class="sb">Site e balcão separados · valores de exemplo</div>
         <svg viewBox="0 0 620 220" style="width:100%;height:auto">
           <line x1="44" y1="10" x2="44" y2="176" stroke="#e4e7de"/>
           <line x1="44" y1="176" x2="606" y2="176" stroke="#e4e7de"/>
@@ -556,7 +556,7 @@ footer a:hover{color:var(--lm)}
         <div class="lgd"><span><i style="background:#1c2208"></i>Balcão e WhatsApp</span><span><i style="background:#c4e538"></i>Pedidos do site</span></div>
       </div>
       <div class="cx">
-        <h3>Faturamento por categoria</h3><div class="sb">Participação no mês</div>
+        <h3>Catálogo por categoria</h3><div class="sb">Como os produtos estão distribuídos</div>
         <svg viewBox="0 0 200 200" style="width:100%;max-width:190px;height:auto;display:block;margin:6px auto 0">
           <circle cx="100" cy="100" r="72" fill="none" stroke="#f0f2ec" stroke-width="30"/>
           <circle cx="100" cy="100" r="72" fill="none" stroke="#c4e538" stroke-width="30" stroke-dasharray="122 330" transform="rotate(-90 100 100)"/>
@@ -574,7 +574,7 @@ footer a:hover{color:var(--lm)}
     </div>
 
     <div class="cx" style="margin-bottom:26px">
-      <h3>Os cinco produtos que mais saem</h3><div class="sb">Quantidades reais do último mês, direto do Bling</div>
+      <h3>Os cinco produtos que mais saem</h3><div class="sb">Quantidades reais do último mês, direto do Bling da loja</div>
       <div class="bh"><div class="tp"><b>Piso Modular Automotivo Aberto — Cinza</b><span>502 un</span></div><div class="tr"><i style="width:100%"></i></div></div>
       <div class="bh"><div class="tp"><b>Piso Modular Automotivo Aberto — Preto</b><span>134 un</span></div><div class="tr"><i style="width:27%"></i></div></div>
       <div class="bh"><div class="tp"><b>Toalha de Microfibra Dual Loop Amarela 80x40</b><span>129 un</span></div><div class="tr"><i style="width:26%"></i></div></div>
@@ -582,7 +582,7 @@ footer a:hover{color:var(--lm)}
       <div class="bh" style="margin-bottom:0"><div class="tp"><b>Sport Lux Gold Man — Folha Aromatizante</b><span>102 un</span></div><div class="tr"><i style="width:20%"></i></div></div>
     </div>
 
-    <div class="cb" style="margin-top:8px"><div><h2 style="font-size:20px">Pedidos de hoje</h2><p>Chegam do site e vão direto para o Bling.</p></div></div>
+    <div class="cb" style="margin-top:8px"><div><h2 style="font-size:20px">Pedidos de hoje</h2><p>Chegam do site e vão direto para o Bling. Pedidos de exemplo, clientes reais da carteira.</p></div></div>
     <table class="tb" style="margin-bottom:28px">
       <tr><th>Pedido</th><th>Cliente</th><th>Tipo</th><th class="num">Itens</th><th class="num">Valor</th><th>Situação</th></tr>
       <tr><td><b>#A3F1</b></td><td>Macena Car Shop</td><td>Oficina</td><td class="num">14</td><td class="num">R$ 1.284,60</td><td><span class="pill ok">no Bling</span></td></tr>
@@ -594,14 +594,15 @@ footer a:hover{color:var(--lm)}
     <div class="cb"><div><h2 style="font-size:20px">Produtos que precisam de atenção</h2><p>Levantado no cadastro real. Estes não devem ir para o site assim.</p></div></div>
     <table class="tb">
       <tr><th>Problema</th><th class="num">Produtos</th><th>Por que importa</th></tr>
-      <tr><td><b>Sem marca cadastrada</b></td><td class="num">270</td><td>Não aparecem quando o cliente filtra por marca</td></tr>
+      <tr><td><b>Sem marca cadastrada</b></td><td class="num">21</td><td>Não aparecem quando o cliente filtra por marca</td></tr>
+      <tr><td><b>Marcas duplicadas</b></td><td class="num">5</td><td>Kers/KERS, Carpro/carpro, Central Sul/CentalSul — dividem o mesmo filtro</td></tr>
       <tr><td><b>Sem categoria</b></td><td class="num">275</td><td>Não entram em nenhum menu do site</td></tr>
       <tr><td><b>Sem descrição</b></td><td class="num">270</td><td>Cliente abre o produto e não lê nada</td></tr>
       <tr><td><b>Preço zerado</b></td><td class="num">43</td><td>Não podem ser publicados de jeito nenhum</td></tr>
       <tr><td><b>Sem foto</b></td><td class="num">197</td><td>Produto sem foto praticamente não vende</td></tr>
     </table>
     <p style="font-size:13px;color:var(--tx2);margin-top:14px;max-width:640px">
-      Estes números vieram da análise do cadastro real em agosto de 2026. No site definitivo esta tela se atualiza sozinha, e o produto com pendência fica bloqueado para publicação até ser corrigido.
+      Estes números vieram da análise do cadastro real em agosto de 2026. Foram recuperadas 106 marcas automaticamente a partir do nome do produto, o que derrubou de 270 para 21 os itens sem marca. No site definitivo esta tela se atualiza sozinha, e o produto com pendência fica bloqueado para publicação até ser corrigido.
     </p>
   </div>
 </div>
@@ -811,11 +812,15 @@ function gerar(){const ks=Object.keys(car);if(!ks.length){alert('Adicione produt
  document.getElementById('msg').textContent=`Olá! Quero pedir pelo site:\n\n${l.join('\n')}\n\nTotal: ${brl(t)}${B2B?'\n(preço de revenda)':'\nÀ vista no Pix: '+brl(t*0.95)}\n\nPedido ${cd}`;
  document.getElementById('mdMsg').classList.add('on');}
 
-const KPIS=[['810','produtos publicados',''],['4','pedidos hoje',''],['R$ 4.846,10','vendido hoje',''],['785','itens sem foto ou marca','al']];
+const KPIS=[['810','produtos publicados',''],['4','pedidos hoje (exemplo)',''],['R$ 4.846,10','vendido hoje (exemplo)',''],['240','itens a corrigir antes de publicar','al']];
 document.getElementById('kpis').innerHTML=KPIS.map(k=>`<div class="kp ${k[2]}"><b>${k[0]}</b><span>${k[1]}</span></div>`).join('');
 
 let LOGADO=false;
 function ir(v){['vLoja','vPainel','vPolitica','vLogin'].forEach(i=>document.getElementById(i).classList.add('oculto'));
+ fechar();
+ const soLoja=(v!=='painel'&&v!=='politica'&&v!=='login');
+ document.getElementById('gv').style.display=soLoja?'':'none';
+ document.getElementById('fd').style.display=soLoja?'':'none';
  if(v==='painel'&&!LOGADO)v='login';
  const alvo={painel:'vPainel',politica:'vPolitica',login:'vLogin'}[v]||'vLoja';
  document.getElementById(alvo).classList.remove('oculto');
