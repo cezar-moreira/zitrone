@@ -380,8 +380,8 @@ footer a:hover{color:var(--lm)}
     <div class="lg" onclick="ir('loja')"><div class="car"></div><div class="n">ZITRONE</div><div class="s">CAR CARE</div></div>
     <div class="bs"><span class="lp">⌕</span><input id="busca" type="text" placeholder="Buscar produto, marca ou código..." oninput="filtrar()"></div>
     <div class="ac">
-      <div class="fn"><b>(85) 9 0000-0000</b><span>seg a sáb · 8h às 18h</span></div>
-      <button class="bZ" onclick="abrir()">WhatsApp</button>
+      <div class="fn"><b>(85) 9636-9804</b><span>seg a sex 8h–17h · sáb 9h–13h</span></div>
+      <button class="bZ" onclick="zap('Olá! Vim pelo site e queria tirar uma dúvida.')">WhatsApp</button>
       <button class="bP" onclick="abrir()">Pedido<span class="bo" id="bolha">0</span></button>
     </div>
   </div>
@@ -398,7 +398,7 @@ footer a:hover{color:var(--lm)}
 
 <section class="hero">
   <div class="w heroIn">
-    <div class="olho">ALDEOTA E MARAPONGA · FORTALEZA</div>
+    <div class="olho">AV. SANTOS DUMONT, 2035 · ALDEOTA · FORTALEZA</div>
     <h1>O que o profissional usa,<br><em>entregue hoje</em> na sua oficina.</h1>
     <p>Produtos e equipamentos das marcas que realmente trabalham. Monte o pedido aqui e feche no WhatsApp em trinta segundos.</p>
     <div class="hbt">
@@ -415,7 +415,7 @@ footer a:hover{color:var(--lm)}
 
 <div class="cf"><div class="w cfIn">
   <div class="cfI"><b>Mesmo dia</b><span>entrega em Fortaleza</span></div>
-  <div class="cfI"><b>Retire na loja</b><span>em 1 hora, sem frete</span></div>
+  <div class="cfI"><b>Retire na loja</b><span>Aldeota · Av. Santos Dumont</span></div>
   <div class="cfI"><b>5% no Pix</b><span>desconto à vista</span></div>
   <div class="cfI"><b>Nota fiscal</b><span>em todo pedido</span></div>
 </div></div>
@@ -480,10 +480,15 @@ footer a:hover{color:var(--lm)}
     <div class="fG">
       <div>
         <div class="lg" style="margin-bottom:12px"><div class="car"></div><div class="n" style="font-size:19px">ZITRONE</div><div class="s">CAR CARE</div></div>
-        Produtos e equipamentos para estética automotiva.<br>Fortaleza, CE<br>CNPJ 32.067.940/0001-94
+        Produtos e equipamentos para estética automotiva e higienização.<br>
+        Compras e varejo · Fortaleza, CE<br>CNPJ 32.067.940/0001-94
       </div>
-      <div><h4>Lojas</h4>Aldeota<br>Maraponga<br>Seg a sáb, 8h às 18h</div>
-      <div><h4>Atendimento</h4>WhatsApp<br>Telefone<br><a href="#">@zitronecarcare</a></div>
+      <div><h4>Loja Aldeota</h4>Av. Santos Dumont, 2035<br>Esquina com a Av. Barão de Studart<br>Dentro do posto Shell<br><br><h4>Loja Maraponga</h4>Fortaleza, CE</div>
+      <div><h4>Atendimento</h4>
+        Segunda a sexta · 8h às 17h<br>Sábado · 9h às 13h<br>Domingo · fechado<br><br>
+        <b style="color:#fff">(85) 9636-9804</b><br>
+        <a href="#" onclick="zap('Olá! Vim pelo site.');return false">Falar no WhatsApp</a><br>
+        <a href="https://instagram.com/zitronecarcare">@zitronecarcare</a></div>
       <div><h4>Institucional</h4><a href="#" onclick="ir('politica');return false">Política de privacidade</a><br><a href="#">Trocas e devoluções</a><br><a href="#" onclick="loginB2B();return false">Área da oficina</a></div>
     </div>
     <div class="lgpd"><b>Seus dados estão protegidos.</b> Coletamos apenas o necessário para atender seu pedido. Você pode pedir acesso, correção ou exclusão dos seus dados a qualquer momento, conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018). Conexão segura em todas as páginas.</div>
@@ -776,7 +781,7 @@ function verProd(c){const o=CAT.find(x=>x.c===c);
    <div><span>Entrega em Fortaleza</span><span>No mesmo dia</span></div>
   </div>
   <div class="pgB"><button class="ad" onclick="add('${o.c}');document.getElementById('mdProd').classList.remove('on')">Adicionar ao pedido</button>
-   <button class="zp" onclick="alert('No site definitivo abre o WhatsApp com este produto já na mensagem.')">Tirar dúvida</button></div>
+   <button class="zp" onclick="zap('Olá! Tenho uma dúvida sobre: ${o.n} (cód. ${o.c})')">Tirar dúvida</button></div>
   <p style="font-size:13px;color:var(--tx2);margin-top:16px">Descrição completa e vídeo de aplicação entram aqui, puxados do cadastro do Bling.</p>
  </div></div>
  ${rel.length?`<div style="padding:0 26px 26px"><h3 style="font-size:16px;font-weight:700;margin-bottom:12px">Quem levou este, levou também</h3>
@@ -805,11 +810,14 @@ function pintar(){const ks=Object.keys(car),q=Object.values(car).reduce((a,b)=>a
  document.getElementById('frete').textContent='Peso estimado: '+pesoKg.replace('.',',')+' kg · retirada grátis nas lojas · entrega em Fortaleza no mesmo dia';}
 function abrir(){document.getElementById('gv').classList.add('on');document.getElementById('fd').classList.add('on');}
 function fechar(){document.getElementById('gv').classList.remove('on');document.getElementById('fd').classList.remove('on');}
+const FONE='558596369804';
+function zap(txt){window.open('https://wa.me/'+FONE+'?text='+encodeURIComponent(txt),'_blank');}
 function gerar(){const ks=Object.keys(car);if(!ks.length){alert('Adicione produtos ao pedido primeiro.');return;}
  const l=ks.map(k=>{const o=CAT.find(x=>x.c===k);return `${car[k]}x ${o.n} (cód. ${o.c}) — ${brl(preco(o))} cada`;});
  const t=ks.reduce((s,k)=>s+preco(CAT.find(x=>x.c===k))*car[k],0);
  const cd='#'+Math.random().toString(36).slice(2,6).toUpperCase();
- document.getElementById('msg').textContent=`Olá! Quero pedir pelo site:\n\n${l.join('\n')}\n\nTotal: ${brl(t)}${B2B?'\n(preço de revenda)':'\nÀ vista no Pix: '+brl(t*0.95)}\n\nPedido ${cd}`;
+ window.__MSG=`Olá! Quero pedir pelo site:\n\n${l.join('\n')}\n\nTotal: ${brl(t)}${B2B?'\n(preço de revenda)':'\nÀ vista no Pix: '+brl(t*0.95)}\n\nPedido ${cd}`;
+ document.getElementById('msg').textContent=window.__MSG;
  document.getElementById('mdMsg').classList.add('on');}
 
 const KPIS=[['810','produtos publicados',''],['4','pedidos hoje (exemplo)',''],['R$ 4.846,10','vendido hoje (exemplo)',''],['240','itens a corrigir antes de publicar','al']];
