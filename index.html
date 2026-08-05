@@ -29,11 +29,9 @@ a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
 /* topo */
 .topo{position:sticky;top:0;z-index:60;background:var(--pre);color:#fff}
 .topoIn{display:flex;align-items:center;gap:18px;padding:14px 0}
-.lg{display:flex;flex-direction:column;line-height:1;flex-shrink:0}
-.lg .car{width:32px;height:8px;background:var(--lm);border-radius:8px 8px 2px 2px;margin-bottom:5px;position:relative}
-.lg .car::before{content:"";position:absolute;left:6px;top:-5px;width:17px;height:7px;background:var(--lm);border-radius:6px 8px 0 0}
-.lg .n{font-size:22px;font-weight:800;letter-spacing:-1px}
-.lg .s{font-size:7.5px;letter-spacing:4px;color:#6f777d;margin-top:4px;font-weight:700}
+.lg{flex-shrink:0;display:block}
+.lg img{display:block;height:44px;width:auto}
+@media(max-width:660px){.lg img{height:36px}}
 .bs{flex:1;position:relative;min-width:0}
 .bs input{width:100%;padding:12px 15px 12px 42px;border:1px solid var(--bd);border-radius:11px;font-size:15px;background:var(--pre2);color:#fff;outline:none}
 .bs input:focus{border-color:var(--lmE);background:var(--pre3)}
@@ -381,6 +379,20 @@ footer a:hover{color:var(--lm)}
 .igCel{aspect-ratio:1/1;border-radius:11px;border:1px solid var(--bd);background:linear-gradient(160deg,#22262b,#101315);display:flex;align-items:center;justify-content:center;color:#4f5934;font-size:10.5px;font-weight:800;letter-spacing:1px;text-align:center;padding:8px;transition:.16s}
 .igCel:hover{border-color:var(--lmE);transform:scale(1.04)}
 .igCel.on{background:linear-gradient(160deg,rgba(196,229,56,.22),rgba(196,229,56,.06));color:var(--lm);border-color:rgba(196,229,56,.4)}
+
+.quem{background:var(--bg2);border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)}
+.qGr{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:1000px){.qGr{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.qGr{grid-template-columns:1fr}}
+.qIt{background:var(--bg);border:1px solid var(--ln);border-radius:var(--r);padding:22px 20px;transition:.18s;position:relative;overflow:hidden}
+.qIt:hover{border-color:var(--lmE);transform:translateY(-3px)}
+.qIt::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--lm)}
+.qIt h3{font-size:17px;font-weight:700;margin-bottom:7px}
+.qIt p{font-size:14px;color:var(--tx2);line-height:1.55}
+.sobre{max-width:760px}
+.sobre p{font-size:16.5px;color:var(--tx2);line-height:1.75;margin-bottom:14px}
+.sobre p b{color:var(--tx)}
+.sobre .dest{font-size:19px;color:var(--tx);font-weight:600;line-height:1.6}
 </style>
 </head>
 <body>
@@ -395,7 +407,7 @@ footer a:hover{color:var(--lm)}
 
 <div class="topo">
   <div class="w topoIn">
-    <div class="lg" onclick="ir('loja')"><div class="car"></div><div class="n">ZITRONE</div><div class="s">CAR CARE</div></div>
+    <div class="lg" onclick="ir('loja')"><img src="logo-zitrone-branco.png" alt="Zitrone Car Care"></div>
     <div class="bs"><span class="lp">⌕</span><input id="busca" type="text" placeholder="Buscar produto, marca ou código..." oninput="filtrar()"></div>
     <div class="ac">
       <div class="fn"><b>(85) 9636-9804</b><span>seg a sex 8h–17h · sáb 9h–13h</span></div>
@@ -421,7 +433,7 @@ footer a:hover{color:var(--lm)}
     <p>Produtos e equipamentos das marcas que realmente trabalham. Monte o pedido aqui e feche no WhatsApp em trinta segundos.</p>
     <div class="hbt">
       <button class="b1" onclick="document.getElementById('cat').scrollIntoView()">Ver o catálogo</button>
-      <button class="b2" onclick="loginB2B()">Sou oficina ou revenda</button>
+      <button class="b2" onclick="document.getElementById('oficina').scrollIntoView()">Sou profissional</button>
     </div>
     <div class="pv">
       <div><b>39,4 mil</b><span>seguidores no Instagram</span></div>
@@ -477,6 +489,29 @@ footer a:hover{color:var(--lm)}
 </section>
 
 
+
+<section class="sec quem">
+  <div class="w">
+    <div class="cb"><div><h2>Para quem é a Zitrone</h2><p>Atendemos quem vive disso e quem faz por gosto — sempre com produto profissional.</p></div></div>
+    <div class="qGr">
+      <div class="qIt"><h3>Detailer</h3><p>O profissional da estética automotiva, que precisa de produto que responde e de reposição rápida para não parar o serviço.</p></div>
+      <div class="qIt"><h3>Hobista</h3><p>Quem cuida do próprio carro por gosto e quer o mesmo produto que o profissional usa, com quem explique como aplicar.</p></div>
+      <div class="qIt"><h3>Oficina e concessionária</h3><p>Reparação automotiva, motocicleta e náutica. Quem entrega o veículo limpo e precisa de abastecimento constante.</p></div>
+      <div class="qIt"><h3>Higienização</h3><p>Profissional de higienização automotiva, hoteleira ou residencial. Estofado, tecido, couro e superfícies delicadas.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="w sobre">
+    <div class="cb"><div><h2>Produto profissional, com quem entende do assunto</h2></div></div>
+    <p class="dest">A Zitrone nasceu em Fortaleza para colocar na mão de quem trabalha — e de quem gosta — o mesmo produto que a estética automotiva de verdade usa.</p>
+    <p>São mais de <b>sessenta marcas</b> entre químicos, microfibras, boinas, politrizes, aspiradores, equipamento e EPI. Da lavagem ao acabamento, do polimento à proteção, do estofado ao couro.</p>
+    <p>E não é só carro. Nossos produtos limpam e protegem <b>moto, barco, estofado de casa, hotel e até instrumento musical</b> — porque cuidar bem de uma superfície é sempre a mesma técnica, mudando só o produto certo.</p>
+    <p>Duas lojas em Fortaleza, <b>Aldeota e Maraponga</b>, com quem atende sabendo o que está vendendo. Se você não sabe qual produto usar, pergunte. É para isso que a gente está aqui.</p>
+  </div>
+</section>
+
 <section class="ig">
   <div class="w igIn">
     <div class="igTx">
@@ -500,16 +535,16 @@ footer a:hover{color:var(--lm)}
 <section class="sec d">
   <div class="w b2bIn">
     <div class="b2bTx">
-      <div class="o2">ÁREA PROFISSIONAL</div>
-      <h2>Oficina, car shop e concessionária compram diferente.</h2>
-      <p>Você já tem seu preço na loja. Aqui ele aparece sozinho, e o pedido da semana passada volta montado com um toque.</p>
-      <button class="b1" onclick="loginB2B()">Entrar com meu CNPJ</button>
+      <div class="o2">ÁREA DO PROFISSIONAL</div>
+      <h2>Quem trabalha com isso todo dia compra diferente.</h2>
+      <p>Detailer, oficina, concessionária, lava-jato e higienizador: aqui o pedido da semana passada volta montado com um toque, e você fecha em segundos.</p>
+      <button class="b1" onclick="zap('Olá! Sou profissional e queria falar sobre pedidos recorrentes.')">Falar com um vendedor</button>
     </div>
     <div class="b2bL">
-      <div class="b2bI"><b>Seu preço de sempre</b><span>Tabela do seu cadastro, sem precisar perguntar quanto está.</span></div>
+      <div class="b2bI"><b>Seu histórico à mão</b><span>Tudo que você já comprou, para consultar quando precisar repor.</span></div>
       <div class="b2bI"><b>Repetir último pedido</b><span>Um toque e volta tudo montado. Só ajustar a quantidade.</span></div>
       <div class="b2bI"><b>Pedido rápido por código</b><span>Já sabe o que quer? Digite os códigos e feche em segundos.</span></div>
-      <div class="b2bI"><b>Fora do horário</b><span>Monte à noite, depois de fechar. A gente separa cedo.</span></div>
+      <div class="b2bI"><b>Fora do horário</b><span>Monte o pedido à noite, depois de fechar. A gente separa cedo.</span></div>
     </div>
   </div>
 </section>
@@ -518,7 +553,7 @@ footer a:hover{color:var(--lm)}
   <div class="w">
     <div class="fG">
       <div>
-        <div class="lg" style="margin-bottom:12px"><div class="car"></div><div class="n" style="font-size:19px">ZITRONE</div><div class="s">CAR CARE</div></div>
+        <div class="lg" onclick="ir('loja')"><img src="logo-zitrone-branco.png" alt="Zitrone Car Care"></div>
         Produtos e equipamentos para estética automotiva e higienização.<br>
         Compras e varejo · Fortaleza, CE<br>CNPJ 32.067.940/0001-94
       </div>
@@ -528,7 +563,7 @@ footer a:hover{color:var(--lm)}
         <b style="color:#fff">(85) 9636-9804</b><br>
         <a href="#" onclick="zap('Olá! Vim pelo site.');return false">Falar no WhatsApp</a><br>
         <a href="https://instagram.com/zitronecarcare" target="_blank" rel="noopener">Siga @zitronecarcare</a></div>
-      <div><h4>Institucional</h4><a href="#" onclick="ir('politica');return false">Política de privacidade</a><br><a href="#">Trocas e devoluções</a><br><a href="#" onclick="loginB2B();return false">Área da oficina</a></div>
+      <div><h4>Institucional</h4><a href="#" onclick="ir('politica');return false">Política de privacidade</a><br><a href="#">Trocas e devoluções</a><br><a href="#oficina">Área do profissional</a></div>
     </div>
     <div class="lgpd"><b>Seus dados estão protegidos.</b> Coletamos apenas o necessário para atender seu pedido. Você pode pedir acesso, correção ou exclusão dos seus dados a qualquer momento, conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018). Conexão segura em todas as páginas.</div>
     <div class="fB">Protótipo desenvolvido por SoftwareHouse Fortaleza · Cezar Moreira</div>
@@ -544,7 +579,7 @@ footer a:hover{color:var(--lm)}
    <div class="foto"></div><div class="veu"></div>
   </div>
   <div class="lgForm"><div class="lgBox">
-    <div class="lg"><div class="car"></div><div class="n" style="font-size:21px;color:#fff">ZITRONE</div><div class="s">CAR CARE</div></div>
+    <div class="lg" onclick="ir('loja')"><img src="logo-zitrone-branco.png" alt="Zitrone Car Care"></div>
     <h1>Entrar no painel</h1>
     <div class="p">Acesso restrito à equipe da loja.</div>
     <div class="lgErr" id="lgErr">Usuário ou senha incorretos. Confira os dados de demonstração abaixo.</div>
@@ -741,7 +776,7 @@ const ETAPAS=[['Lavagem','Shampoo, pré-lavagem, snow foam, luvas e baldes','Lav
 const KITS=[['ETAPA COMPLETA','Kit Lavagem Profissional','Tudo para a lavagem de um carro do começo ao fim, sem esquecer nada.',['Shampoo neutro','Luva de microfibra','Balde com separador','Toalha de secagem']],
 ['ETAPA COMPLETA','Kit Polimento Iniciante','Para quem está montando a oficina e quer começar com o essencial.',['Boina de corte','Boina de lustro','Composto de corte','Composto de refino']],
 ['ETAPA COMPLETA','Kit Interior','Higienização completa de painel, plásticos, couro e estofado.',['APC interno','Hidratante de couro','Escova de detalhe','Aromatizante']],
-['MAIS PEDIDO','Kit Oficina Mensal','A reposição do mês que a oficina sempre pede. Preço de atacado.',['Microfibras 12 un','Desengraxante 20L','Pretinho 5L','Luvas descartáveis']]];
+['MAIS PEDIDO','Kit Oficina Mensal','A reposição do mês que a oficina sempre pede, num kit só.',['Microfibras 12 un','Desengraxante 20L','Pretinho 5L','Luvas descartáveis']]];
 const DICAS=[['DICAS','5 marcas e suas boinas: qual usar em cada corte'],['COMPARATIVO','5 shampoos desengraxantes testados lado a lado'],
 ['PRODUTO','Pulverizador 360° da Kers: vale a pena?'],['ACESSÓRIO','Conector de mangueira com engate rápido']];
 
@@ -772,12 +807,11 @@ document.getElementById('grupos').innerHTML=`<div class="ch2 on" onclick="setG(t
    <option value="giro">Mais vendidos</option><option value="menor">Menor preço</option>
    <option value="maior">Maior preço</option><option value="az">Nome A-Z</option></select>`;
 
-function pB2B(p){return Math.round(p*0.88*100)/100}
+function pB2B(p){return p}
 function card(o){const cls=o.e>5?'ok':(o.e>0?'bx':'no'),t=o.e>5?'Pronta entrega':(o.e>0?'Últimas '+o.e+' un':'Sob encomenda');
  return `<article class="pd"><div class="im" onclick="verProd('${o.c}')"><span>FOTO DO PRODUTO</span><div class="fl">${o.g}</div></div>
  <div class="in"><div class="mk">${o.m}</div><h3 onclick="verProd('${o.c}')" style="cursor:pointer">${o.n}</h3>
- ${B2B?`<div class="vl">${brl(pB2B(o.p))}</div><div class="b2b">seu preço de revenda · varejo ${brl(o.p)}</div>`
-      :`<div class="px">${brl(o.p*0.95)} no Pix</div><div class="vl">${brl(o.p)}</div>`}
+ `<div class="px">${brl(o.p*0.95)} no Pix</div><div class="vl">${brl(o.p)}</div>`
  <div class="cd">Código ${o.c}</div><div class="es ${cls}">${t}</div>
  <button class="ad" onclick="add('${o.c}')">Adicionar ao pedido</button></div></article>`;}
 
@@ -809,8 +843,7 @@ function verProd(c){const o=CAT.find(x=>x.c===c);
  <div class="mdX"><button onclick="document.getElementById('mdProd').classList.remove('on')">×</button></div>
  <div class="pgD"><div><div class="pgIm">FOTO DO PRODUTO</div></div>
  <div class="pgI"><div class="mk">${o.m}</div><h2>${o.n}</h2><div class="cod">Código ${o.c} · ${o.g}</div>
-  ${B2B?`<div class="preco">${brl(pB2B(o.p))}</div><div class="pix">seu preço de revenda · varejo ${brl(o.p)}</div>`
-       :`<div class="preco">${brl(o.p)}</div><div class="pix">${brl(o.p*0.95)} à vista no Pix</div>`}
+  `<div class="preco">${brl(o.p)}</div><div class="pix">${brl(o.p*0.95)} à vista no Pix</div>`
   <div class="parc">ou em até 3x sem juros no cartão</div>
   <div class="esp">
    <div><span>Disponibilidade</span><span>${o.e>0?o.e+' unidades':'Sob encomenda'}</span></div>
@@ -827,10 +860,7 @@ function verProd(c){const o=CAT.find(x=>x.c===c);
    <div class="gr">${rel.map(card).join('')}</div></div>`:''}`;
  document.getElementById('mdProd').classList.add('on');}
 
-function loginB2B(){
- if(B2B){B2B=false;alert('Você saiu da área profissional. Os preços voltaram para o varejo.');}
- else{B2B=true;alert('Área profissional ativada nesta demonstração.\n\nNo site definitivo, o acesso é liberado por CNPJ cadastrado, e cada cliente vê a tabela de preço que já tem na loja.\n\nAqui os preços caíram 12% para você ver como fica.');}
- render();document.getElementById('gradeZ').innerHTML=CAT.slice(0,4).map(card).join('');pintar();}
+function loginB2B(){document.getElementById('oficina').scrollIntoView();}
 
 function add(c){car[c]=(car[c]||0)+1;pintar();abrir();}
 function mudar(c,d){car[c]=(car[c]||0)+d;if(car[c]<=0)delete car[c];pintar();}
@@ -855,7 +885,7 @@ function gerar(){const ks=Object.keys(car);if(!ks.length){alert('Adicione produt
  const l=ks.map(k=>{const o=CAT.find(x=>x.c===k);return `${car[k]}x ${o.n} (cód. ${o.c}) — ${brl(preco(o))} cada`;});
  const t=ks.reduce((s,k)=>s+preco(CAT.find(x=>x.c===k))*car[k],0);
  const cd='#'+Math.random().toString(36).slice(2,6).toUpperCase();
- window.__MSG=`Olá! Quero pedir pelo site:\n\n${l.join('\n')}\n\nTotal: ${brl(t)}${B2B?'\n(preço de revenda)':'\nÀ vista no Pix: '+brl(t*0.95)}\n\nPedido ${cd}`;
+ window.__MSG=`Olá! Quero pedir pelo site:\n\n${l.join('\n')}\n\nTotal: ${brl(t)}\nÀ vista no Pix: ${brl(t*0.95)}\n\nPedido ${cd}`;
  document.getElementById('msg').textContent=window.__MSG;
  document.getElementById('mdMsg').classList.add('on');}
 
