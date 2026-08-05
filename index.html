@@ -811,7 +811,7 @@ function pB2B(p){return p}
 function card(o){const cls=o.e>5?'ok':(o.e>0?'bx':'no'),t=o.e>5?'Pronta entrega':(o.e>0?'Últimas '+o.e+' un':'Sob encomenda');
  return `<article class="pd"><div class="im" onclick="verProd('${o.c}')"><span>FOTO DO PRODUTO</span><div class="fl">${o.g}</div></div>
  <div class="in"><div class="mk">${o.m}</div><h3 onclick="verProd('${o.c}')" style="cursor:pointer">${o.n}</h3>
- `<div class="px">${brl(o.p*0.95)} no Pix</div><div class="vl">${brl(o.p)}</div>`
+ <div class="px">${brl(o.p*0.95)} no Pix</div><div class="vl">${brl(o.p)}</div>
  <div class="cd">Código ${o.c}</div><div class="es ${cls}">${t}</div>
  <button class="ad" onclick="add('${o.c}')">Adicionar ao pedido</button></div></article>`;}
 
@@ -843,7 +843,7 @@ function verProd(c){const o=CAT.find(x=>x.c===c);
  <div class="mdX"><button onclick="document.getElementById('mdProd').classList.remove('on')">×</button></div>
  <div class="pgD"><div><div class="pgIm">FOTO DO PRODUTO</div></div>
  <div class="pgI"><div class="mk">${o.m}</div><h2>${o.n}</h2><div class="cod">Código ${o.c} · ${o.g}</div>
-  `<div class="preco">${brl(o.p)}</div><div class="pix">${brl(o.p*0.95)} à vista no Pix</div>`
+  <div class="preco">${brl(o.p)}</div><div class="pix">${brl(o.p*0.95)} à vista no Pix</div>
   <div class="parc">ou em até 3x sem juros no cartão</div>
   <div class="esp">
    <div><span>Disponibilidade</span><span>${o.e>0?o.e+' unidades':'Sob encomenda'}</span></div>
@@ -885,7 +885,7 @@ function gerar(){const ks=Object.keys(car);if(!ks.length){alert('Adicione produt
  const l=ks.map(k=>{const o=CAT.find(x=>x.c===k);return `${car[k]}x ${o.n} (cód. ${o.c}) — ${brl(preco(o))} cada`;});
  const t=ks.reduce((s,k)=>s+preco(CAT.find(x=>x.c===k))*car[k],0);
  const cd='#'+Math.random().toString(36).slice(2,6).toUpperCase();
- window.__MSG=`Olá! Quero pedir pelo site:\n\n${l.join('\n')}\n\nTotal: ${brl(t)}\nÀ vista no Pix: ${brl(t*0.95)}\n\nPedido ${cd}`;
+ window.__MSG=`Olá! Quero pedir pelo site:\n\n${l.join('\n')}\n\nTotal: ${brl(t)}\nÀ vista no Pix: `+brl(t*0.95)+`\n\nPedido ${cd}`;
  document.getElementById('msg').textContent=window.__MSG;
  document.getElementById('mdMsg').classList.add('on');}
 
